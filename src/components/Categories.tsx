@@ -1,12 +1,14 @@
-import React from 'react'
-import Category from './Category'
+"use client";
+import React, { useContext, useLayoutEffect } from "react";
+import Category from "./Category";
+import { CategoryContext } from "@/context/CategoryContext";
 
 const Categories = ({ categories }: any) => {
-  // const { changeCategory } = useContext(CategoryContext);
+  const { changeCategory } = useContext(CategoryContext);
 
-  // useLayoutEffect(() => {
-  //   changeCategory(categories?.data[0].attributes.Title);
-  // }, []);
+  useLayoutEffect(() => {
+    changeCategory(categories?.data[0].attributes.Title);
+  }, []);
 
   return (
     <div className="flex gap-6 mb-8">
@@ -19,4 +21,4 @@ const Categories = ({ categories }: any) => {
   );
 };
 
-export default Categories
+export default Categories;
